@@ -1,5 +1,6 @@
 
 using FluentValidation;
+using WebApplication1.Dto;
 
 namespace WebApplication1;
 
@@ -18,6 +19,9 @@ public static class Prelude
             PropertyNameCaseInsensitive = true
         }).ToAff()
         select _1;
+
+    public static Aff<Unit> ValidateAff(NotificationMailDto req) =>
+        new NotificationMailValidator().ValidateAff(req);
 
     public static IResult ResultsError(Error err) => err.Exception.Case switch
     {

@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -27,17 +29,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapPost("/api/NotificationMail", async (HttpRequest dto, IValidator<NotificationMail> validator) =>
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapPost("/api/NotificationMail", async (HttpRequest dto) =>
 {
     var q = from __ in unitEff
-            from req in JsonDeserializeAff<NotificationMail>(dto.Body)
-            from _1 in validator.ValidateAff(req)
+            from req in JsonDeserializeAff<NotificationMailDto>(dto.Body)
+            from _1 in ValidateAff(req)
             select req;
 
     return match(await q.Run(), Results.Ok, ResultsError);
-}).Accepts<NotificationMail>("application/json");
-
+}).Accepts<NotificationMailDto>("application/json");
 
 await app.RunAsync();
-
-

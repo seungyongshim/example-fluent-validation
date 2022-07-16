@@ -7,7 +7,7 @@ using FluentValidation;
 
 namespace WebApplication1.Dto;
 
-public class NotificationMailValidator : AbstractValidator<NotificationMail>
+public class NotificationMailValidator : AbstractValidator<NotificationMailDto>
 {
     public NotificationMailValidator()
     {

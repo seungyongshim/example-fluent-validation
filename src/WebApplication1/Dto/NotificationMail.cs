@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace WebApplication1.Dto;
 
-public record NotificationMail
+public record NotificationMailDto
 (
     string Email,
     string Name,
