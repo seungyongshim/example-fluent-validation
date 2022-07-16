@@ -1,16 +1,21 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3;
+using WebApplication3.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(c =>
+{
+    c.Filters.Add<LoggerActionFilter>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.OperationFilter<RequestBodyTypeFilter>();
 });
 builder.Services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+builder.Logging.AddJsonConsole();
 
 var app = builder.Build();
 

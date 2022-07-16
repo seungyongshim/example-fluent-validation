@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Logging;
 using WebApplication3.Controllers;
 
@@ -18,9 +20,6 @@ public class NotificationMailControllerSpec
     [Fact]
     public async Task Success()
     {
-
-
-
         var httpContext = new DefaultHttpContext();
 
         using var ms = new MemoryStream();
