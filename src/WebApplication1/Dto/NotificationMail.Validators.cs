@@ -12,7 +12,7 @@ public class NotificationMailValidator : AbstractValidator<NotificationMail>
     public NotificationMailValidator()
     {
         RuleFor(x => x.Email).NotNull().EmailAddress();
-        RuleFor(x => x.Attachment).NotNull().SetValidator(new AttachmentValidator());
+        RuleFor(x => x.Attachment).SetValidator(new AttachmentValidator());
     }
 }
 
