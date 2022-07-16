@@ -1,8 +1,9 @@
 
 using FluentValidation;
-using WebApplication1.Dto;
+using WebApplication3;
+using WebApplication3.Dto;
 
-namespace WebApplication1;
+namespace WebApplication3;
 
 public static class ValidatorExt
 {
@@ -17,7 +18,7 @@ public static class LoggerExt
         logger.LogInformation(message, args);
         return unitEff;
     }
-        
+
 }
 
 public static class Prelude
