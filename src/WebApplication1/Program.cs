@@ -29,15 +29,12 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapPost("/api/NotificationMail", async (HttpRequest dto, LoggerFactory loggerFactory) =>  
+app.MapPost("/api/NotificationMail", async (HttpContext http)  =>  
 {
-    var logger = loggerFactory.CreateLogger("NotificationMail");
-
     var q = from __ in unitEff
-            from req in JsonDeserializeAff<NotificationMailDto>(dto.Body)
-            from _2 in logger.InfoEff("here")
+            from req in JsonDeserializeAff<NotificationMailDto>(http.Request.Body)
             from _1 in ValidateAff(req)
-            select req;
+            select req;           
 
     return match(await q.Run(), Results.Ok, ResultsError);
 }).Accepts<NotificationMailDto>("application/json");

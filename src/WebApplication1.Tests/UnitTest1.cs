@@ -19,10 +19,9 @@ public class NotificationMailSpec
         using var client = application.CreateClient();
         using var flurl = new FlurlClient(client);
         var response = await flurl.Request("/api/NotificationMail")
-                                  .OnError(call => { })
                                   .PostJsonAsync(new
         {
-            Hello = "World"
+            Email = "11@11.11"
         });
     }
 }
