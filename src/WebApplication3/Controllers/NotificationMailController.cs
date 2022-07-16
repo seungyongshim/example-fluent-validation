@@ -9,18 +9,19 @@ namespace WebApplication3.Controllers;
 [Route("api/[controller]")]
 public class NotificationMailController : ControllerBase
 {
-    public NotificationMailController(ILogger<NotificationMailController> logger) => Logger = logger;
+    public NotificationMailController(ILogger<NotificationMailController> logger)
+    {
+        Logger = logger;
+    }
 
     public ILogger Logger { get; }
 
     [HttpPost]
     [Consumes(typeof(NotificationMailDto), "application/json")]
-    public async Task Post()
+    public async Task PostAsync()
     {
-        var dto = HttpContext.Request.Body;
-
         var q = from __ in unitEff
-                from req in JsonDeserializeAff<NotificationMailDto>(dto)
+                from req in HttpContext.ReadFromJsonAff<NotificationMailDto>()
                 from _2 in Logger.InfoEff("here")
                 from _1 in ValidateAff(req)
                 select req;
