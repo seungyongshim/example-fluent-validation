@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2022-08-07_03-13-19" tag="35_2811149702">
+  <assembly name="WebApplication3">
+    <class name="Program" coveredlines="24" coverablelines="24" totallines="38" coveredbranches="2" totalbranches="2" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="WebApplication3.Controllers.NotificationMailController" coveredlines="13" coverablelines="13" totallines="31" coveredbranches="0" totalbranches="0" coveredcodeelements="3" totalcodeelements="3" />
+    <class name="WebApplication3.Dto.Attachment" coveredlines="0" coverablelines="5" totallines="17" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="WebApplication3.Dto.AttachmentValidator" coveredlines="5" coverablelines="5" totallines="26" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="WebApplication3.Dto.NotificationMailDto" coveredlines="7" coverablelines="7" totallines="17" coveredbranches="0" totalbranches="0" coveredcodeelements="5" totalcodeelements="5" />
+    <class name="WebApplication3.Dto.NotificationMailValidator" coveredlines="5" coverablelines="5" totallines="26" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="WebApplication3.Filters.LoggerActionFilter" coveredlines="10" coverablelines="10" totallines="21" coveredbranches="0" totalbranches="0" coveredcodeelements="3" totalcodeelements="3" />
+    <class name="WebApplication3.HttpContextExt" coveredlines="7" coverablelines="7" totallines="15" coveredbranches="2" totalbranches="2" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="WebApplication3.LoggerExt" coveredlines="4" coverablelines="4" totallines="49" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="WebApplication3.Prelude" coveredlines="1" coverablelines="17" totallines="49" coveredbranches="0" totalbranches="4" coveredcodeelements="1" totalcodeelements="3" />
+    <class name="WebApplication3.RequestBodyTypeFilter" coveredlines="0" coverablelines="18" totallines="31" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="WebApplication3.ValidatorExt" coveredlines="1" coverablelines="1" totallines="49" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="1" />
+  </assembly>
+</coverage>
