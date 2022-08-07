@@ -20,8 +20,6 @@ public class NotificationMailController : ControllerBase
     [Consumes(typeof(NotificationMailDto), "application/json")]
     public async Task PostAsync()
     {
-        var user = HttpContext.User;
-
         var q = from __ in unitEff
                 from req in HttpContext.ReadFromJsonAff<NotificationMailDto>()
                 from _2 in Logger.InfoEff("here")

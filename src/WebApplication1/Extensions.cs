@@ -17,7 +17,6 @@ public static class LoggerExt
         logger.LogInformation(message, args);
         return unitEff;
     }
-        
 }
 
 public static class Prelude
