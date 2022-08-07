@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Dto;
+using WebApplication3.Traits;
 
 namespace WebApplication3.Controllers;
 
@@ -28,4 +29,12 @@ public class NotificationMailController : ControllerBase
 
         await HttpContext.ExecuteAsync(q, Results.Ok);
     }
+
+    public readonly record struct RT :
+        HasHttp<RT> 
+    {
+
+    }
 }
+
+
